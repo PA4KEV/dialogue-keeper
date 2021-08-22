@@ -1,0 +1,6 @@
+button_maps:
+  dialogue_choices:
+    nina: "n"
+    deborah: "D"
+    silvia: "S"
+    remora: "r"
