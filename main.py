@@ -1,20 +1,23 @@
-import sqlalchemy
 import sys
 
 import config
+import database.config
 from dialog import Dialog
 import version
 
 if __name__ == "__main__":
     print(f"=== Start Dialogue Keeper {version.version} ===")
 
-    if not config.verify_database():
-        print("Error: unable to load dialogue database!")
+    session = database.config.initialize()
+    if not session:        
         sys.exit(1)
-    else:
-        engine = sqlalchemy.create_engine(f"sqlite:///dialogues.db")
-        connection = engine.connect()
+    else:               
         print("Loaded dialogue database")
+        c = session.query(database.config.Character).one_or_none()
+        for d in c.dialogs:
+            print(f'{c.name}: {d.choice_path}')
+        
+
     print("Loaded config.yaml" if config.load_config() else "Error loading config.yaml")
     
 

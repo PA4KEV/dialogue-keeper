@@ -23,9 +23,3 @@ def map_buttons(config_data: dict):
         button_mappings[button_map]["mapped_buttons"].add(
             dialogue_choices[button_map].upper()
             )
-
-def create_database():
-    pass
-
-def verify_database() -> bool:
-    return True
