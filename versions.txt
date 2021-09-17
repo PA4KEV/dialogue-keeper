@@ -1,0 +1,6 @@
+Python 3.9.5 (default, May 11 2021, 08:20:37)
+
+sqlite3 --version
+3.34.1 2021-01-20 14:10:07 10e20c0b43500cfb9bbc0eaa061c57514f715d87238f4d835880cd846b9ealt1
+
+
